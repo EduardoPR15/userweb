@@ -1,40 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect, useState } from 'react'
+
 import './App.css'
-import { useForm } from 'react-hook-form'
-import FormUser from './Components/FormUser'
+
 import axios from 'axios'
+
 const baseURL = 'https://users-crud1.herokuapp.com'
 function App() {
-  
-  const [user, setUser] = useState()
-//obtener usuarios
-  const getAllUsers = () =>{
-    const URL = `${baseURL}/user/`
-    axios.get(URL)
-    .then (res =>setUser(res.data))
-    .catch(err =>console.log(err) )
-
-  }
-  useEffect(() => {
-    getAllUsers()
-  }, [])
-  //crear un usuario nuevo
-  const newUser =  data  =>{
-    const URL = `${baseURL}/users/`
-    axios.post(URL, data)
-    .then(res =>console.log(res.data) )
-    .catch(err =>console.log(err) )
-  }
+const [users, setUsers] = useState()
+const getAllUsers = () => {
+  const URL = `${baseURL}/users/`
+ axios.get(URL) 
+  .then(res =)
+}
 
 
 
   return (
     <div className="App">
-      <FormUser />
+      <h1>crud</h1>
+
 
     </div>
-  )
+)
 }
 
 export default App
