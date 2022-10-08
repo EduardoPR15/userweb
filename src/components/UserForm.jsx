@@ -1,12 +1,19 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-
+const defaultValues = {
+            email: "",
+            password: "",
+            first_name: "",
+            last_name: "",
+            birthday: ""
+}
 const UserForm = ({createNewUser}) => {
 
     const {handleSubmit, reset, register} = useForm()
 
     const submit = data => {
         createNewUser(data)
+        reset(defaultValues)
     }
 return (
     <form onSubmit={handleSubmit(submit)}>
