@@ -52,6 +52,7 @@ const uptdateUserById = (id, data) => {
   .then(res =>{ 
     console.log(res.data)
     getAllUsers()
+    setUpdateInfo()
   })
   .catch(err => console.log(err))
 }
