@@ -3,7 +3,7 @@ import React from 'react'
 const UserCard = ({user,deleteUserById,setUpdateInfo}) => {
   const handleEdit = () => {
     setUpdateInfo(user)
-    console.log("editar");
+        
 
   }
   return (

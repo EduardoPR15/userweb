@@ -10,7 +10,8 @@ function App() {
 
   const [users, setUsers] = useState()
   const [updateInfo, setUpdateInfo] = useState()
- // console.log(updateInfo);
+ 
+  //console.log(updateInfo);
   
   const getAllUsers = () => {
     const URL = `${baseURL}/users/`
@@ -22,7 +23,7 @@ function App() {
     useEffect(() => {
       getAllUsers()
     }, [])
-console.log(users);
+//console.log(users);
 
 
 const createNewUser = data => {
@@ -45,19 +46,27 @@ const deleteUserById = id => {
   .catch(err => console.log(err))
 }
 
-const uptdateUserById = () => {
-  
+const uptdateUserById = (id, data) => {
+  const URL = `${baseURL}/users/${id}/`
+  axios.patch(URL, data)
+  .then(res =>{ 
+    console.log(res.data)
+    getAllUsers()
+  })
+  .catch(err => console.log(err))
 }
 
 
 
   return (
     <div className="App">
-      <h1>crud</h1>
+      <h1>cruds</h1>
       <UserForm 
       createNewUser={createNewUser}
       updateInfo={updateInfo}
-       />
+      uptdateUserById={uptdateUserById}
+
+      />
       {
         users?.map(user => (
           <UserCard
@@ -65,6 +74,7 @@ const uptdateUserById = () => {
           user={user}
           deleteUserById={deleteUserById}
           setUpdateInfo={setUpdateInfo}
+          
           />
         ))
       }

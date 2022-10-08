@@ -8,23 +8,33 @@ const defaultValues = {
             last_name: "",
             birthday: ""
 }
-const UserForm = ({createNewUser,updateInfo}) => {
-    //console.log(updateInfo);
+const UserForm = ({createNewUser, updateInfo, uptdateUserById}) => {
+
+    console.log(updateInfo);
     
-    useEffect(() => {
+    useEffect(() => {      
         if (updateInfo) {
             reset(updateInfo)
         }
     }, [updateInfo])
     
-    const {handleSubmit, reset, register} = useForm()
 
+
+    
+    const {handleSubmit, reset, register} = useForm()
     const submit = data => {
-        createNewUser(data)
+        if (updateInfo) {
+            console.log("edicion")
+            uptdateUserById(updateInfo.id, data)
+        } else{
+        console.log("se va a crear");
+            createNewUser(data)
+        }
         reset(defaultValues)
-        console.log("reseteo");
         
     }
+        
+    
 return (
     <form onSubmit={handleSubmit(submit)}>
             {
@@ -57,7 +67,6 @@ return (
             }
                     </div>
     </form>
-  )
-}
+  )}
 
 export default UserForm
