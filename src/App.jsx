@@ -9,6 +9,8 @@ const baseURL = 'https://users-crud1.herokuapp.com'
 function App() {
 
   const [users, setUsers] = useState()
+  const [updateInfo, setUpdateInfo] = useState()
+ // console.log(updateInfo);
   
   const getAllUsers = () => {
     const URL = `${baseURL}/users/`
@@ -43,17 +45,26 @@ const deleteUserById = id => {
   .catch(err => console.log(err))
 }
 
+const uptdateUserById = () => {
+  
+}
+
+
+
   return (
     <div className="App">
       <h1>crud</h1>
       <UserForm 
-      createNewUser={createNewUser}/>
+      createNewUser={createNewUser}
+      updateInfo={updateInfo}
+       />
       {
         users?.map(user => (
           <UserCard
           key={user.id} 
           user={user}
           deleteUserById={deleteUserById}
+          setUpdateInfo={setUpdateInfo}
           />
         ))
       }

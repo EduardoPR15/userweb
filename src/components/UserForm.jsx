@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 const defaultValues = {
             email: "",
@@ -7,17 +8,29 @@ const defaultValues = {
             last_name: "",
             birthday: ""
 }
-const UserForm = ({createNewUser}) => {
-
+const UserForm = ({createNewUser,updateInfo}) => {
+    //console.log(updateInfo);
+    
+    useEffect(() => {
+        if (updateInfo) {
+            reset(updateInfo)
+        }
+    }, [updateInfo])
+    
     const {handleSubmit, reset, register} = useForm()
 
     const submit = data => {
         createNewUser(data)
         reset(defaultValues)
+        console.log("reseteo");
+        
     }
 return (
     <form onSubmit={handleSubmit(submit)}>
-        <h1>titulo</h1>
+            {
+                updateInfo ? <h1>Editar usuario</h1> :  <h1>Usuario nuevo</h1>
+            }
+
         <div>
             <label htmlFor="email">email</label>
             <input type="email" id="email" {...register("email")} />
@@ -39,7 +52,9 @@ return (
              <input type="date" id="birthday" {...register("birthday")}/>    
         </div>
                     <div>
-                        <button>Create</button>
+                    {
+                updateInfo ? <button> Actualizar</button> :  <button> Crear usuario</button>
+            }
                     </div>
     </form>
   )

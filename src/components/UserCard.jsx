@@ -1,6 +1,11 @@
 import React from 'react'
 
-const UserCard = ({user,deleteUserById}) => {
+const UserCard = ({user,deleteUserById,setUpdateInfo}) => {
+  const handleEdit = () => {
+    setUpdateInfo(user)
+    console.log("editar");
+
+  }
   return (
     <div>
         <div>
@@ -9,7 +14,7 @@ const UserCard = ({user,deleteUserById}) => {
             <h4>Email {user.email}</h4>
             <h4>Fecha de nacimiento {user.birthday}</h4>
         </div>
-            <button> Editar</button>
+            <button onClick={handleEdit}> Editar</button>
             <button onClick={ () => deleteUserById(user.id)}>Borrar</button>
     </div>
   )
