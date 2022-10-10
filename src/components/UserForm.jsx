@@ -18,7 +18,7 @@ const UserForm = ({createNewUser, updateInfo, uptdateUserById}) => {
             reset(updateInfo)
         }
     }, [updateInfo])
-    
+     
 
 
     
@@ -44,23 +44,23 @@ return (
             }
 
         <div>
-            <label htmlFor="email">email</label>
-            <input type="email" id="email" {...register("email")} />
+            <label className="emailLabel" htmlFor="email">email:   </label>
+            <input className="emailInput" type="email" id="email" {...register("email")} />
         </div>
         <div>
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">password : </label>
             <input type="password" id="password"{...register("password")} />
         </div>
         <div>
-            <label htmlFor="first_name">first name</label>
+            <label htmlFor="first_name">first name: </label>
             <input type="text" id="first_name" {...register("first_name")}/>
         </div>
         <div>
-            <label htmlFor="last_name">last name</label>
+            <label htmlFor="last_name">last name: </label>
             <input type="text" id="last_name"{...register("last_name")} />
         </div>
         <div>
-            <label htmlFor="birthday">birthday</label>
+            <label htmlFor="birthday">birthday: </label>
              <input type="date" id="birthday" {...register("birthday")}/>    
         </div>
                     <div>

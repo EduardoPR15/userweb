@@ -1,3 +1,12 @@
 .formcard{
-    background-color:black;
+    align-content: center;
+    background-color: aqua;
+    margin: auto;
+    width: 350px;
+}
+.emailLabel{
+    background-color: red;
+    margin-left: 30px;
+    margin-right: 10px;
+
 }
