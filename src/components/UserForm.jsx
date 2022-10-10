@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import './Styles/userForm.css'
 const defaultValues = {
             email: "",
             password: "",
@@ -21,6 +22,7 @@ const UserForm = ({createNewUser, updateInfo, uptdateUserById}) => {
 
 
     
+
     const {handleSubmit, reset, register} = useForm()
     const submit = data => {
         if (updateInfo) {
@@ -36,7 +38,7 @@ const UserForm = ({createNewUser, updateInfo, uptdateUserById}) => {
         
     
 return (
-    <form onSubmit={handleSubmit(submit)}>
+    <form className='formcard' onSubmit={handleSubmit(submit)}>
             {
                 updateInfo ? <h1>Editar usuario</h1> :  <h1>Usuario nuevo</h1>
             }
