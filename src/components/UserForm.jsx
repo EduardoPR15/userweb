@@ -9,7 +9,7 @@ const defaultValues = {
             last_name: "",
             birthday: ""
 }
-const UserForm = ({createNewUser, updateInfo, uptdateUserById}) => {
+const UserForm = ({setCloseForm, closeForm, createNewUser, updateInfo, uptdateUserById}) => {
 
     console.log(updateInfo);
     
@@ -33,12 +33,18 @@ const UserForm = ({createNewUser, updateInfo, uptdateUserById}) => {
             createNewUser(data)
         }
         reset(defaultValues)
+        setCloseForm(true)
         
     }
-        
+        const handleClose = () => {
+setCloseForm(true)
+        }
     
 return (
+    <div className={`formcard1 ${closeForm && `disableForm`} `}>
+        
     <form className='formcard' onSubmit={handleSubmit(submit)}>
+    <i onClick={handleClose} className='bx bx-x formclose'></i>
             {
                 updateInfo ? <h3>Editar usuario</h3> :  <h3>Usuario nuevo</h3>            }
 
@@ -85,6 +91,7 @@ return (
             }
                     </div>
     </form>
+    </div>
   )}
 
 export default UserForm

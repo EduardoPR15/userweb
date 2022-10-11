@@ -1,8 +1,11 @@
 .usercontainer {
 display: flex;
-gap: 20px;
+column-gap: 50px;
+row-gap: 30px;
 justify-content: center;
 flex-wrap: wrap;
+padding-left: 20px;
+padding-right: 20px;
 }
 
 * {
@@ -25,4 +28,50 @@ flex-wrap: wrap;
   input {
     outline: none;
   }
+  .formcard1{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0004;
+    backdrop-filter: blur(3px);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.disableForm{
+  display: none;
+}
+.headerdiv{
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+.headerdiv h1{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.btnAdd{
+  margin-top: 10px;
+  background-color: green;
+  width: 170px;
+  max-height: 75px;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+cursor: pointer;
+transition: background-color 200ms ease;
+}
+.btnAdd i{
+  background-color: transparent;
+  font-size: 25px;
+
+}
+.btnAdd:hover{
+  transform: scale(1.05);
+  background-color: greenyellow;
+  transition: background-color 200ms ease;
   
+}

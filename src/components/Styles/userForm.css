@@ -1,8 +1,23 @@
+
+
 .formcard{
     align-content: center;
     background-color: rgb(214, 168, 137);
-    margin: auto;
     width: 300px;
+    border-radius: 15px;
+    text-align:center;
+    margin-bottom: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.formclose{
+    position: absolute;
+    right: 2px;
+    font-size: 25px;
+    color: rgb(211, 23, 23);
+    cursor: pointer;
 }
 .label1{
     width: 150px;
@@ -11,10 +26,21 @@
 }
 .input1{
     margin: auto;
+    border: none;
+}
+.input1 input{
+    border-radius: 5px;
+    height: 25px;
+    width: 180px;
+    border: transparent;
+    cursor: pointer;
 }
 .formdiv{
     display: flex;
     flex-direction: row;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .btndiv{
     display: flex;
@@ -25,17 +51,22 @@
     justify-content: center;
 }
 .actionbtn {
-    background-color: greenyellow;
+    background-color: green;
     width: 50px;
     height: 50px;
     border-radius: 50px;
     transition: transform 0.5s;
     transform-style: preserve-3d;
+    cursor: pointer;
+
 }
 .actionbtn i{
     font-size: 40px;
 }
 .actionbtn:hover{
     transform: rotateY(180deg);
+    background-color: greenyellow;
+    transition: background-color transform 300ms ease;
+    
 }
--
+

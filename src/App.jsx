@@ -10,6 +10,7 @@ function App() {
 
   const [users, setUsers] = useState()
   const [updateInfo, setUpdateInfo] = useState()
+  const [closeForm, setCloseForm] = useState(true)
  
   //console.log(updateInfo);
   
@@ -57,13 +58,17 @@ const uptdateUserById = (id, data) => {
   })
   .catch(err => console.log(err))
 }
-
+const handleOpen = () =>{
+  setCloseForm(false)
+}
 
 
   return (
-    <div className="App">
-      <h1>cruds</h1>
+    <div className="App"> 
+      <div className="headerdiv"><h1>Lista de Usuarios</h1><div className="btnAdd" onClick={handleOpen}><span>Agregar usuario<i className='bx bx-user-plus'></i></span></div></div>
       <UserForm 
+      closeForm={closeForm}
+      setCloseForm={setCloseForm}
       createNewUser={createNewUser}
       updateInfo={updateInfo}
       uptdateUserById={uptdateUserById}
