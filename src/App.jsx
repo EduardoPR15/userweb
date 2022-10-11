@@ -80,6 +80,7 @@ const handleOpen = () =>{
           <UserCard
           key={user.id} 
           user={user}
+          setCloseForm={setCloseForm}
           deleteUserById={deleteUserById}
           setUpdateInfo={setUpdateInfo}
           
