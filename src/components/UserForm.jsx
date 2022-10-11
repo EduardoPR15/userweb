@@ -40,32 +40,48 @@ const UserForm = ({createNewUser, updateInfo, uptdateUserById}) => {
 return (
     <form className='formcard' onSubmit={handleSubmit(submit)}>
             {
-                updateInfo ? <h1>Editar usuario</h1> :  <h1>Usuario nuevo</h1>
-            }
+                updateInfo ? <h3>Editar usuario</h3> :  <h3>Usuario nuevo</h3>            }
 
-        <div>
-            <label className="emailLabel" htmlFor="email">email:   </label>
-            <input className="emailInput" type="email" id="email" {...register("email")} />
+        <div className='formdiv'>
+            <div className="label1">
+                <label htmlFor="email"><p>Email</p>  </label>
+            </div>
+            <div className="input1">
+                <input  type="email" id="email" {...register("email")} />
+            </div>
         </div>
-        <div>
-            <label htmlFor="password">password : </label>
+        <div className='formdiv'>
+            <div className="label1">
+                <label htmlFor="password"><p>password</p> </label>
+                </div>
+             <div className="input1">
             <input type="password" id="password"{...register("password")} />
-        </div>
-        <div>
+       </div> </div>
+        <div className='formdiv'>
+        <div className="label1">
             <label htmlFor="first_name">first name: </label>
+             </div>
+             <div className="input1">
             <input type="text" id="first_name" {...register("first_name")}/>
-        </div>
-        <div>
+       </div>  </div>
+        <div className='formdiv'>
+            <div className="label1">
             <label htmlFor="last_name">last name: </label>
+             </div>
+             <div className="input1">
             <input type="text" id="last_name"{...register("last_name")} />
+       </div>  </div>
+        <div className='formdiv'> 
+            <div className="label1">
+                <label htmlFor="birthday"><p>birthday:</p> </label>
+            </div>
+            <div className="input1">
+                <input type="date" id="birthday" {...register("birthday")}/>    
+            </div>  
         </div>
-        <div>
-            <label htmlFor="birthday">birthday: </label>
-             <input type="date" id="birthday" {...register("birthday")}/>    
-        </div>
-                    <div>
+                    <div className='btndiv'>
                     {
-                updateInfo ? <button> Actualizar</button> :  <button> Crear usuario</button>
+                updateInfo ? <button className='actionbtn'> <i class='bx bx-user-check'></i></button > :  <button className='actionbtn'> <i class='bx bx-user-plus'></i> </button>
             }
                     </div>
     </form>

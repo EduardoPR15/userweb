@@ -17,6 +17,7 @@ function App() {
     const URL = `${baseURL}/users/`
     axios.get(URL) 
       .then(res => setUsers(res.data))
+      
       .catch(err => console.log(err))
 }
 
@@ -68,6 +69,7 @@ const uptdateUserById = (id, data) => {
       uptdateUserById={uptdateUserById}
 
       />
+    <div className="usercontainer">
       {
         users?.map(user => (
           <UserCard
@@ -79,7 +81,7 @@ const uptdateUserById = (id, data) => {
           />
         ))
       }
-
+     </div>
     </div>
 )
 }

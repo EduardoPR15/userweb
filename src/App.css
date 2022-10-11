@@ -1,3 +1,10 @@
+.usercontainer {
+display: flex;
+gap: 20px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
 * {
     box-sizing: border-box;
   }

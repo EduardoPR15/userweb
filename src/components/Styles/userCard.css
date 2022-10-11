@@ -5,4 +5,63 @@
     border-radius: 8px;
     width: 100%;
     max-width: 500px;
+    border-bottom: 10px solid #ccc9;
+}
+.user__name {
+ font-weight: 50px;
+ padding-bottom: 1px;
+ margin-bottom: 10px;
+
+}
+.user__id {
+    color: rgb(211, 23, 23);
+}
+.user__email {
+ color: rgb(0, 0, 0);
+ font-weight: 300;
+}
+.user__birthday {
+    color: rgb(0, 0, 0);
+    font-weight: 300;  
+}
+.Buttons{
+    display: flex;
+flex-direction: row;
+padding: 15px;
+    align-items: center;
+    align-items: center;
+justify-content: space-between;
+margin-left: 60px;
+margin-right: 60px;
+}
+.user__btn {
+aspect-ratio: 2;
+border-radius: 5px;
+
+}
+.user__btn:hover{
+
+    transform: scale(130%);
+    transition: transform 400ms;
+}
+.user__btn:first-child {
+ background-color: rgb(65, 128, 35);
+ width: auto;
+ height: 35px;
+}
+.user__btn:first-child:hover{
+
+    background-color: greenyellow;
+    
+}
+.user__btn:last-child {
+ background-color: orangered;
+ width: auto;
+ height: 35px;
+ 
+}
+.user__btn:last-child:hover{
+  background-color: rgb(255, 0, 0);
+  transition: backgorund-color(5000ms); 
+ 
 }

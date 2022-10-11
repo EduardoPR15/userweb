@@ -1,12 +1,41 @@
 .formcard{
     align-content: center;
-    background-color: aqua;
+    background-color: rgb(214, 168, 137);
     margin: auto;
-    width: 350px;
+    width: 300px;
 }
-.emailLabel{
-    background-color: red;
-    margin-left: 30px;
-    margin-right: 10px;
-
+.label1{
+    width: 150px;
+    height: auto;
+    text-align: center;
 }
+.input1{
+    margin: auto;
+}
+.formdiv{
+    display: flex;
+    flex-direction: row;
+}
+.btndiv{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.actionbtn {
+    background-color: greenyellow;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+.actionbtn i{
+    font-size: 40px;
+}
+.actionbtn:hover{
+    transform: rotateY(180deg);
+}
+-

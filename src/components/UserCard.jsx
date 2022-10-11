@@ -10,14 +10,17 @@ const UserCard = ({user,deleteUserById,setUpdateInfo}) => {
   return (
     <div className='user'>
         <div>
-            <h1>Usuario</h1>
-            <h3 className= 'user__name'>Nombre {user.first_name} {user.last_name} ID: {user.id} </h3>
-            <h4 className= 'user__email'>Email {user.email}</h4>
-            <h4 className= 'user__birthday'>Fecha de nacimiento {user.birthday}</h4>
+            <h2 className= "user__id">Usuario : {user.id}</h2>
+            <h3 className= 'user__name'>Nombre</h3>
+           <h2>{user.first_name} {user.last_name}</h2>
+          
+            <h4 className= 'user__email'><i class='bx bx-envelope'></i> {user.email}</h4>
+            <p className= 'user__birthday' ><i class='bx bx-gift'></i> {user.birthday}</p>
         </div>
+
         <div className='Buttons'>
-            <button onClick={handleEdit} className= 'user__edit'> Editar</button>
-            <button onClick={ () => deleteUserById(user.id)} className= 'user__trash'>Borrar</button>
+            <button className= "user__btn" onClick={handleEdit} > <i class='bx bx-edit'></i>Editar</button>
+            <button className= "user__btn" onClick={ () => deleteUserById(user.id)} ><i class='bx bx-user-minus' ></i>Borrar</button>
         </div>    
     </div>
   )
